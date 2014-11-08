@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>IMDB Search</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.bytedash.LaunchBar.action.IMDBSearch</string>
+	<key>CFBundleIconFile</key>
+	<string>IMDbTemplate.icns</string>
+	<key>LBAbbreviation</key>
+	<string>imdb</string>
+	<key>LBDebugLogEnabled</key>
+	<false/>
+
+	<key>LBDescription</key>
+	<dict>
+		<key>LBAuthor</key>
+		<string>Marco Janssen</string>
+		<key>LBSummary</key>
+		<string>Search IMDB movie info</string>
+		<key>LBTwitter</key>
+		<string>@M4RC0J</string>
+		<key>LBWebsite</key>
+		<string>http://www.bytedash.com/launchbar</string>
+		<key>LBEmail</key>
+		<string>launchbar@bytedash.com</string>
+	</dict>
+	<key>LBScripts</key>
+	<dict>
+		<key>LBDefaultScript</key>
+		<dict>
+			<key>LBAcceptedArgumentTypes</key>
+			<array>
+				<string>string</string>
+			</array>
+			<key>LBScriptName</key>
+			<string>IMDBSearch.js</string>
+			<key>LBReturnsResult</key>
+			<true/>
+			<key>LBLiveFeedbackEnabled</key>
+			<true/>
+			<key>LBRequiresArgument</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>LBTextInputTitle</key>
+	<string>IMDB Search</string>
+</dict>
+</plist>
