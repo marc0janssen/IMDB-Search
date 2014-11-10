@@ -3,23 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>Postcode Check</string>
+	<string>IMDB Search</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.bytedash.LaunchBar.action.PostcodeCheck</string>
+	<string>com.bytedash.LaunchBar.action.IMDBSearch</string>
 	<key>CFBundleIconFile</key>
-	<string>postcode-logo-square.png</string>
+	<string>IMDbTemplate.icns</string>
 	<key>LBAbbreviation</key>
-	<string>pcc</string>
+	<string>imdb</string>
 	<key>LBDebugLogEnabled</key>
 	<false/>
+
 	<key>LBDescription</key>
 	<dict>
 		<key>LBAuthor</key>
 		<string>Marco Janssen</string>
 		<key>LBSummary</key>
-		<string>Shows street en city info when dutch zipcode is entered.</string>
+		<string>Search IMDB movie info</string>
 		<key>LBTwitter</key>
 		<string>@M4RC0J</string>
 		<key>LBWebsite</key>
@@ -36,7 +37,7 @@
 				<string>string</string>
 			</array>
 			<key>LBScriptName</key>
-			<string>PostcodeCheck.js</string>
+			<string>IMDBSearch.js</string>
 			<key>LBReturnsResult</key>
 			<true/>
 			<key>LBLiveFeedbackEnabled</key>
@@ -46,6 +47,6 @@
 		</dict>
 	</dict>
 	<key>LBTextInputTitle</key>
-	<string>Postcode en huisnummer (7521PR 26)</string>
+	<string>IMDB Search</string>
 </dict>
 </plist>

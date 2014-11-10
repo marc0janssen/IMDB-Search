@@ -1,6 +1,6 @@
-Postcode check
+IMDB Search
 ==============
 
-This Launchbar action checks dutch zipcodes and streetnumbers and shows them on Google maps.
+This Launchbar action let you search IMDB in Launchbar.
 
 For info on this file check [this link](http://www.bytedash.com/launchbar/)
