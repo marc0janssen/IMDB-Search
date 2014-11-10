@@ -16,15 +16,7 @@
  * @return {object}        the JSON result. null if not loaded.
  */
 function getUrl(url, params) {
-    //url = url + '&apikey=' + apiToken_;
-/*
-    if (params) {
-        for (var name in params) {
-            url += '&' + name + '=' + params[name];
-        }
-    }
-*/
-    
+
     LaunchBar.debugLog('GET ' + url);
     
     var result = HTTP.getJSON(url);
@@ -33,11 +25,34 @@ function getUrl(url, params) {
     
     if (result.response.status !== 200) {
         LaunchBar.alert(
-                        'Could not contact IMDB.',
-                        'This may be a temporary error. Try again later.\n\IMDB said: ' + result.response.status + ' ' + result.response.localizedStatus);
+                        'Could not contact postcodedate.nl.',
+                        'This may be a temporary error. Try again later.\n\postcodedate.nl said: ' + result.response.status + ' ' + result.response.localizedStatus);
         return null;
     }
 }
+
+
+/**
+ * Get External IP
+ */
+
+function getExternalIp(){
+    
+    var exIP = HTTP.getJSON('http://api.ipify.org?format=json');
+    
+    if (exIP.data){
+        return exIP.data.ip;
+    }
+    
+    if (exIP.response.status !== 200){
+        
+        return '0.0.0.0';
+    }
+    
+    
+    
+}
+
 
 /**
  * @param  {array} posts the Pinboard post objects as returned from HTTP JSON requests.
@@ -45,34 +60,34 @@ function getUrl(url, params) {
  */
 
 function postsAsListResults(results) {
-    var results = results.Search;
+    var status = results.status;
+    var results = results.details;
     var items = [];
     
     var suggestions = [];
+
+    if (status == "ok"){
     
-    for (var i = 0; i < results.length; i++) {
-        var result = results[i];
-        
-        suggestions.push({
-                         title: result.Title + " ("+result.Year+")",
-                         url: 'http://www.imdb.com/title/' + result.imdbID,
-                         icon: "at.obdev.LaunchBar:MoviesTemplate"
+        for (var i = 0; i < results.length; i++) {
+
+            var result = results[i];
+
+            suggestions.push({
+                         title: result.street + " " + result.city + " ("+result.municipality+", "+result.province+")",
+                         url: 'https://www.google.nl/maps/place/'+result.lat+'+'+result.lon,
+                         icon: "at.obdev.LaunchBar:InfoTemplate"
                          });
-    };
-    
-    
-    if (suggestions.length === 0)
-    {
-        return [ {
-                title: "No results found for " + argument,
-                icon: "at.obdev.LaunchBar:InfoTemplate"
-                } ];
+        };
+    }else{
+        suggestions.push({
+                         title: "No such zipcode and streetnumber found.",
+                         icon: "at.obdev.LaunchBar:NotFound.icns"
+                         });
+        
     }
-    
+
     return suggestions;
 }
-
-
 
 
 
