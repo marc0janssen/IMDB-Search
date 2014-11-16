@@ -59,16 +59,7 @@ function postsAsListResults(results) {
                          icon: "at.obdev.LaunchBar:MoviesTemplate"
                          });
     };
-    
-    
-    if (suggestions.length === 0)
-    {
-        return [ {
-                title: "No results found for " + argument,
-                icon: "at.obdev.LaunchBar:InfoTemplate"
-                } ];
-    }
-    
+
     return suggestions;
 }
 
